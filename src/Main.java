@@ -14,9 +14,12 @@ public class Main {
     public static void main(String[] args) {
         Matrix twoByTwo = new Matrix(2, 2);
         twoByTwo.setElement(1, 1, 9);
-        twoByTwo.setElement(1, 2, 10);
-        twoByTwo.setElement(2, 1, -2);
+        twoByTwo.setElement(1, 2, 3);
+        twoByTwo.setElement(2, 1, 4);
         twoByTwo.setElement(2, 2, 1);
         printMatrix(twoByTwo);
+        System.out.println();
+        Matrix inverseTwoByTwo = twoByTwo.inverse();
+        printMatrix(inverseTwoByTwo);
     }
 }
