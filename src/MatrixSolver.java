@@ -58,29 +58,29 @@ public class MatrixSolver {
         return tranpose;
     }
 
-    // public void cofactorExpansion(Matrix m) {
-    //     int[] dim = m.getDimension();
-    //     Map<Integer, Integer> zerosInRows = new HashMap<>();
-    //     Map<Integer, Integer> zerosInCols = new HashMap<>();
+    private void cofactorExpansion(Matrix m) {
+        int[] dim = m.getDimension();
+        Map<Integer, Integer> zerosInRows = new HashMap<>();
+        Map<Integer, Integer> zerosInCols = new HashMap<>();
 
-    //     // Identify the rows and columns which contains the most zeros
-    //     for (int row = 1; row <= dim[0]; row++) {
-    //         for (int col = 1; col <= dim[1]; col++) {
-    //             int element = m.getElement(row, col);
-    //             if (element == 0) {
-    //                 if (!zerosInRows.containsKey(row)) {
-    //                     zerosInRows.put(row, 1);
-    //                 } else {
-    //                     zerosInRows.put(row, zerosInRows.get(row) + 1);
-    //                 }
+        // Identify the rows and columns which contains the most zeros
+        for (int row = 1; row <= dim[0]; row++) {
+            for (int col = 1; col <= dim[1]; col++) {
+                int element = m.getElement(row, col);
+                if (element == 0) {
+                    if (!zerosInRows.containsKey(row)) {
+                        zerosInRows.put(row, 1);
+                    } else {
+                        zerosInRows.put(row, zerosInRows.get(row) + 1);
+                    }
 
-    //                 if (!zerosInCols.containsKey(col)) {
-    //                      zerosInCols.put(col, 1);
-    //                 } else {
-    //                     zerosInCols.put(col, zerosInCols.get(col) + 1);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+                    if (!zerosInCols.containsKey(col)) {
+                         zerosInCols.put(col, 1);
+                    } else {
+                        zerosInCols.put(col, zerosInCols.get(col) + 1);
+                    }
+                }
+            }
+        }
+    }
 }
